@@ -2,8 +2,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProgressComponent } from './progress/progress.component';
-import { Charts1Component } from './charts1/charts1.component';
+import { AddResellerComponent } from './reseller/add/add-reseller.component';
+import { ShowResellersComponent } from './reseller/show/resellers/show-resellers.component';
 
 
 const pageRoutes: Routes = [
@@ -11,9 +11,9 @@ const pageRoutes: Routes = [
         path: '',
         component: PagesComponent,
         children: [
-            { path: 'dashboard', component: DashboardComponent },
-            { path: 'progress', component: ProgressComponent },
-            { path: 'charts1', component: Charts1Component },        
+            { path: 'dashboard', component: DashboardComponent, data: { title: 'Dashboard' } },
+            { path: 'resellers/agregar', component: AddResellerComponent, data: { title: 'Agregar Reseller' } },
+            { path: 'resellers/gestionar', component: ShowResellersComponent, data: { title: 'Gestionar Reseller' } },
             { path: '', pathMatch:'full', redirectTo: '/dashboard' },
         ]
     },

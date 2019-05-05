@@ -1,0 +1,118 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Agregar Reseller</h3>
+                <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="floating-labels my-5" novalidate="novalidate">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group" [ngClass]="{' has-error has-danger': !myForm.controls['name'].valid}">
+                                <input type="text" formControlName="name" id="name" class="form-control" /><span class="bar"></span>
+                                <label class="form-control-label" for="name">Nombre <span class="text-danger">*</span></label>
+                                <span class="help-block">
+
+                                  <small *ngIf="myForm.controls['name'].errors?.required"> El nombre es necesario</small>
+                                  <small *ngIf="myForm.controls['name'].errors?.minlength"> Por lo menos tres caracteres</small>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group has-error has-danger">
+                                <input type="text" formControlName="document" id="document" class="form-control"><span class="bar"></span>
+                                <label for="document">Documento <span class="text-danger">*</span></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="phone">Teléfono</label>
+                                <input type="tel" formControlName="phone" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="email">Email <span class="text-danger">*</span></label>
+                                <input type="email" formControlName="email" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="password">Contraseña <span class="text-danger">*</span></label>
+                                <input type="password" formControlName="password" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="password_confirmation">Confirma Contraseña <span class="text-danger">*</span></label>
+                                <input type="password" formControlName="password_confirmation" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="minimum_amount">Monto Mínimo <span class="text-danger">*</span></label>
+                                <input type="number" formControlName="minimum_value" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="bonus">Bono de recarga '%' <span class="text-danger">*</span></label>
+                                <input type="number" formControlName="bonus" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit">Registrarme</button>
+                </form>
+                {{ myForm.valid }}
+                <!-- <form #addReseller="ngForm" class="form-material" (ngSubmit)="onSubmit(addReseller)">
+                    <small class="text-danger">* Campos requeridos</small>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name">Nombre <span class="text-danger">*</span></label>
+                                <input formControlName="email" />
+                                <input type="text" name="name" id="name" autocomplete="off" class="form-control" placeholder="Nombre del Reseller" (ngModelChange)="onChange()" [(ngModel)]="reseller.name" required>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="phone">Teléfono</label>
+                                <input type="tel" name="phone" id="phone" class="form-control" placeholder="Teléfono del Reseller">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="email">Email <span class="text-danger">*</span></label>
+                                <input type="email" name="email" id="email" class="form-control" placeholder="Email del Reseller" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="password">Contraseña <span class="text-danger">*</span></label>
+                                <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña del Reseller" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="password_confirmation">Confirma Contraseña <span class="text-danger">*</span></label>
+                                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="Confirmar Contraseña" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="minimum_amount">Monto Mínimo <span class="text-danger">*</span></label>
+                                <input type="number" name="minimum_amount" id="minimum_amount" class="form-control" placeholder="Monto Mínimo del Reseller" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="bonus">Bono de recarga '%' <span class="text-danger">*</span></label>
+                                <input type="number" name="bonus" id="bonus" class="form-control" placeholder="Monto Mínimo del Reseller" required>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-rounded btn-primary"><i class="mdi mdi-content-save"></i> Guardar</button>
+                </form> -->
+            </div>
+        </div>
+    </div>
+</div>
